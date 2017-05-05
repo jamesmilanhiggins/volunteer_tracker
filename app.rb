@@ -29,3 +29,20 @@ get('/projects') do
   @projects = Project.all
   erb(:projects)
 end
+
+get('/projects/:id') do
+  @project = Project.find(params.fetch("id").to_i)
+  erb(:project)
+end
+
+get('/projects/:id/edit') do
+  @project = Project.find(params.fetch("id").to_i)
+  erb(:project_edit)
+end
+
+patch("/projects/:id") do
+  project_name = params.fetch("project_name")
+  @project = Project.find(params.fetch("id").to_i)
+  @project.update(:project_name => project_name)
+  erb(:project)
+end
