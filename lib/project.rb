@@ -28,8 +28,15 @@ class Project
     projects
   end
 
+  define_singleton_method(:find) do |identification|
+    Project.all.each do |project|
+      if project.id == identification
+        return project
+      end
+    end
+  end
+
+
 
 
 end
-
-  # define_method
