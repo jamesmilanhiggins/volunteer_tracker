@@ -44,7 +44,13 @@ class Project
       project_volunteers.push(Volunteer.new({:volunteer_name => volunteer_name, :project_id => project_id}))
     end
     project_volunteers
-  end  
+  end
+
+  define_method(:update) do |attributes|
+    @project_name = attributes[:project_name]
+    @id = self.id
+    DB.exec("UPDATE projects SET project_name= '#{@project_name}' WHERE id = #{@id};")
+  end
 
 
 

@@ -47,7 +47,7 @@ describe(Project) do
       expect(Project.find(project2.id)).to(eq(project2))
     end
    end
-   
+
    describe("#volunteers") do
      it("returns an array of volunteers for that project") do
        project1 = Project.new({:project_name => "House", :id =>nil})
@@ -58,6 +58,15 @@ describe(Project) do
        volunteer2.save
        expect(project1.volunteers).to(eq([volunteer1, volunteer2]))
      end
+    end
+
+    describe("#update") do
+      it("lets you update a project in the database") do
+        project1 = Project.new({:project_name => "House", :id =>nil})
+        project1.save
+        project1.update({:project_name => "Updated House Name"})
+        expect(project1.project_name).to(eq("Updated House Name"))
+      end
     end
 
 
