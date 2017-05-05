@@ -29,4 +29,32 @@ describe("#project_id") do
   end
 end
 
+describe("#==") do
+  it("is the same volunteer if it has the same volunteer_name ") do
+    test_volunteer = Volunteer.new({:volunteer_name => "james", :project_id => 1})
+    test_volunteer2 = Volunteer.new({:volunteer_name => "james", :project_id => 1})
+    expect(test_volunteer).to(eq(test_volunteer2))
+  end
+end
+
+# describe("#update") do
+#   it("updated the name of the volunteer")do
+#     test_volunteer = Volunteer.new({:volunteer_name => "james", :project_id => 1})
+#     test_volunteer.save
+#     test_volunteer.update({:volunteer_name => "mike", :project_id => 1})
+#     expect(test_volunteer.volunteer_name).to(eq("mike"))
+#   end
+# end
+
+# describe("#delete") do
+#   it("will remove the volunteer from the database") do
+#     test_volunteer = Volunteer.new({:volunteer_name => "james", :project_id => 1})
+#     test_volunteer.save
+#     test_volunteer.delete
+#     expect(Volunteer.all).to(eq([]))
+#     end
+#   end
+
+
+
 end

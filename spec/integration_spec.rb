@@ -1,17 +1,12 @@
-# require "capybara/rspec"
-# require "./app"
-#
-# Capybara.app = Sinatra::Application
-# set(:show_exceptions, false)
+require "capybara/rspec"
+require "./app"
+require "pry"
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
 
-# example integration test
-
-# describe("the phrase parser path", {:type => :feature}) do
-#   it("processes the user input and returns correct message if its a palindrome") do
-#     visit("/")
-#     fill_in("phrase1", :with => "madam")
-#     fill_in("phrase2", :with => "anagram")
-#     click_button("what am i?")
-#     expect(page).to have_content("'madam' is a palindrome")
-#   end
-# end
+describe('adding a new project', {:type => :feature}) do
+  it('allows a user to create a new project') do
+    visit('/')
+    expect(page).to have_content('Welcome to the Project Manager Application')
+  end
+end
