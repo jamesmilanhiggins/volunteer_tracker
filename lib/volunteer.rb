@@ -31,4 +31,23 @@ class Volunteer
   #   DB.exec("UPDATE volunteers SET volunteer_name = '#{@name}' WHERE id = #{self.id};")
   # end
 
+
+  define_singleton_method(:find) do |identification|
+    Volunteer.all.each do |volunteer|
+      if volunteer.volunteer_name == identification
+        return volunteer
+      end
+    end
+  end
+
+  define_method(:update) do |attributes|
+    @volunteer_name = attributes[:volunteer_name]
+    @project_id = attributes[:project_id]
+    DB.exec("UPDATE volunteers SET volunteer_name= '#{@volunteer_name}' WHERE project_id = #{@project_id};")
+  end
+
+  define_method(:delete) do
+    DB.exec("DELETE FROM volunteers WHERE id = #{self.id};")
+  end
+
 end

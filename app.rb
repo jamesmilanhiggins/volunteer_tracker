@@ -48,7 +48,6 @@ patch("/projects/:id") do
   project_name = params.fetch("project_name")
   @project = Project.find(params.fetch("id").to_i)
   @project.update(:project_name => project_name)
-binding.pry
   erb(:project)
 end
 
