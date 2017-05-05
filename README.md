@@ -49,7 +49,7 @@ Bundler
 |As a non-profit employee, I want to delete volunteers from projects|Delete: Mike|Project 1 - Volunteer []|
 
 ## Known Bugs
-Clicking add volunteer does not add a volunteer. It adds a new project.
+Right now the method to update a volunteer is working, but the front end is not working.
 
 the delete method for volunteer currently does not work
 

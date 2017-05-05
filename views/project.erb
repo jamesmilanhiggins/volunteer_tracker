@@ -16,6 +16,12 @@
     <p>There are no volunteers on this project!</p>
   <% end %>
 
+  <!-- <ul>
+    < @project.volunteers.each do |volunteer| >
+      <li><a href="/volunteers/<= volunteer.id>"><= volunteer.volunteer_name ></a> </li>
+    < end
+  </ul> -->
+
 <h3>Add a volunteer to <%= @project.project_name %> </h3>
 
 <form action="/volunteers" method="post">
