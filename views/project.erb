@@ -1,4 +1,7 @@
-<h1><%= @project.project_name %></h1>
+<h1>The name of your project is: <%= @project.project_name %></h1>
+
+<%= @project.volunteers %>
+
 
 <% if @project.volunteers.any? %>
   <h3>Here are all the volunteers working on this project:</h3>
@@ -18,7 +21,7 @@
 <form action="/volunteers" method="post">
   <input id="project_id" name="project_id" type="hidden" value="<%= @project.id() %>">
 
-  <label for="volunteer_name">name of the volunteer:</label>
+  <label for="volunteer_name">Name of the volunteer:</label>
   <input id="volunteer_name" name="volunteer_name" type="text">
 
   <button type="submit">Add volunteer</button>
@@ -26,15 +29,18 @@
 
 <hr>
 
-<div class="container">
+<!-- <div class="container"> -->
   <a href="/"><button class="btn">Home</a>
+  <br>
   <a href="/projects">View All Projects</a>
-  <a href="/projects/new">Add New Project</a>
+  <br>
+  <!-- <a href="/projects/new">Add New Project</a>
+  <br>
   <a href="/projects/new">Add New Volunteer</a>
-</div>
-<br>
+</div> -->
+<!-- <br> -->
 
 <p><a href="/projects/<%= @project.id() %>/edit">Edit <%= @project.project_name %> project</a></p>
 <br>
 <br>
-<p><a href="/">Return to Main Page</a></p>
+<!-- <p><a href="/">Return to Main Page</a></p> -->

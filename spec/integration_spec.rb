@@ -26,6 +26,9 @@ describe('viewing projects that have been created', {:type => :feature}) do
     expect(page).to have_content('Your Current Projects')
   end
 end
+
+
+
 # describe('viewing projects that have been created', {:type => :feature}) do
 #   it('allows a user to view the projects and click into an individual project') do
 #     visit('/')
