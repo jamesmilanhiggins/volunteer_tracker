@@ -13,8 +13,7 @@ class Project
   end
 
   define_method(:==) do |another_project|
-    self.project_name.==(another_project.project_name)
-    # .&(self.id.==(another_project.id))
+    self.project_name.==(another_project.project_name).&(self.id.==(another_project.id))
   end
 
   define_singleton_method(:all) do
@@ -35,6 +34,28 @@ class Project
       end
     end
   end
+
+  define_method(:volunteers) do
+    project_volunteers = []
+    volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{self.id};")
+    volunteers.each do |volunteer|
+      volunteer_name = volunteer.fetch("volunteer_name")
+      project_id = volunteer.fetch("project_id").to_i
+      project_volunteers.push(Volunteer.new({:volunteer_name => volunteer_name, :project_id => project_id}))
+    end
+    project_volunteers
+  end  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
