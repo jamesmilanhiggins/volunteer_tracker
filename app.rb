@@ -24,3 +24,8 @@ post('/projects') do
   test_project.save
   erb(:success)
 end
+
+get('/projects') do
+  @projects = Project.all
+  erb(:projects)
+end

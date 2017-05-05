@@ -19,3 +19,10 @@ describe('adding a new project', {:type => :feature}) do
     expect(page).to have_content('Success!')
   end
 end
+describe('viewing projects that have been created', {:type => :feature}) do
+  it('allows a user to view the projects') do
+    visit('/')
+    click_link('View All Projects')
+    expect(page).to have_content('Your Current Projects')
+  end
+end

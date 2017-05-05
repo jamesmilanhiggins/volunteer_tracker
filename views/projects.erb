@@ -1,0 +1,14 @@
+<h1>Your Current Projects</h1>
+
+<% if @projects.any?() %>
+  <h3>Click on a project to see who is volunteering:</h3>
+
+  <ul>
+    <% @projects.each() do |project| %>
+      <li><a href="/projects/<%= project.id()%>"><%= project.project_name() %></a></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <p>There are no projects yet!</p>
+<% end %>
