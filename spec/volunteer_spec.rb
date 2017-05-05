@@ -62,7 +62,7 @@ end
 
 # describe("#delete") do
 #   it("will remove the volunteer from the database") do
-#     test_volunteer = Volunteer.new({:volunteer_name => "james", :project_id => 1})
+#     test_volunteer = Volunteer.new({:volunteer_name => "james"})
 #     test_volunteer.save
 #     test_volunteer.delete
 #     expect(Volunteer.all).to(eq([]))

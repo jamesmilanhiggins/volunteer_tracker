@@ -1,6 +1,8 @@
 # Volunteer Tracker
 
-This program lets someone add projects and assign volunteers to a specific project
+####This program lets someone add projects and assign volunteers to a specific project, May 5th, 2017
+
+#### By James Higgins
 
 ### Prerequisites
 
@@ -37,8 +39,22 @@ Bundler
 
 | behavior |  input   |  output  |
 |----------|:--------:|:--------:|
-<!--SPECS GO HERE-->
+|As a non-profit employee, I want to add new projects|Add: House Remodel|Projects: house remodel|
+|As a non-profit employee, I want to view projects|View|Projects: House Remodel|
+|As a non-profit employee, I want to update projects|update House remodel to Apartment Remodel|Projects: Apartment Remodel |
+|As a non-profit employee, I want to delete projects|delete Apartment Remodel|Projects:|
+|As a non-profit employee, I want to add new volunteers to projects|Add: James|Project 1 - Volunteer James|
+|As a non-profit employee, I want to view volunteers to projects|View: Project 1|Project 1 - Volunteer James|
+|As a non-profit employee, I want to add update volunteers of projects|Update: Mike|Project 1 - Volunteer Mike|
+|As a non-profit employee, I want to delete volunteers from projects|Delete: Mike|Project 1 - Volunteer []|
 
+## Known Bugs
+Clicking add volunteer does not add a volunteer. It adds a new project.
+
+the delete method for volunteer currently does not work
+
+## Support and Contact details
+Please email james.milan.higgins@gmail.com with any questions.
 ## Authors
 
 * James Higgins

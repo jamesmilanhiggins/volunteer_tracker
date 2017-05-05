@@ -42,6 +42,7 @@ class Volunteer
 
   define_method(:update) do |attributes|
     @volunteer_name = attributes[:volunteer_name]
+
     DB.exec("UPDATE volunteers SET volunteer_name= '#{@volunteer_name}' WHERE project_id = #{@project_id};")
   end
 
