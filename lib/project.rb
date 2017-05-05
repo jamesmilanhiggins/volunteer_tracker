@@ -13,7 +13,8 @@ class Project
   end
 
   define_method(:==) do |another_project|
-    (self.project_name == another_project.project_name) && (self.id == another_project.id)
+    self.project_name.==(another_project.project_name)
+    # .&(self.id.==(another_project.id))
   end
 
   define_singleton_method(:all) do
