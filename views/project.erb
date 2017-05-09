@@ -8,7 +8,7 @@
 
   <ul>
     <% @project.volunteers.each do |volunteer| %>
-      <li><%= volunteer.volunteer_name %> </li>
+      <li><a href="/volunteers/<%= volunteer.id%>"><%= volunteer.volunteer_name %></a> </li>
     <% end %>
   </ul>
 

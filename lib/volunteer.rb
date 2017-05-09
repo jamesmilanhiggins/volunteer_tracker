@@ -5,7 +5,7 @@ class Volunteer
   define_method(:initialize) do |attributes|
     @volunteer_name = attributes.fetch(:volunteer_name)
     @project_id = attributes.fetch(:project_id)
-    @id = attributes.fetch(:id).to_i
+    @id = nil
   end
 
   define_singleton_method(:all) do
