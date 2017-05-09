@@ -38,12 +38,12 @@ describe("#==") do
 end
 
 describe(".find") do
-  it("returns a volunteer by its name") do
+  it("returns a volunteer by its id") do
     volunteer1 = Volunteer.new({:volunteer_name => "House", :project_id =>1, :id => nil})
     volunteer1.save
     volunteer2 = Volunteer.new({:volunteer_name => "Car", :project_id =>1, :id => nil})
     volunteer2.save
-    expect(Volunteer.find(volunteer2.volunteer_name)).to(eq(volunteer2))
+    expect(Volunteer.find(volunteer2.id)).to(eq(volunteer2))
   end
  end
 

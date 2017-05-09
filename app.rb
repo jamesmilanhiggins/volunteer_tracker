@@ -29,11 +29,6 @@ get('/projects') do
   @projects = Project.all
   erb(:projects)
 end
-#
-# get('/volunteers') do
-#   @volunteers = Volunteer.all
-#   erb(:volunteers)
-# end
 
 get('/projects/:id') do
   @project = Project.find(params.fetch("id").to_i)
@@ -52,7 +47,13 @@ patch("/projects/:id") do
   erb(:project)
 end
 
-post("/volunteers") do
+delete("/projects/:id") do
+  @project = Project.find(params.fetch("id").to_i)
+  @project.delete
+  erb(:index)
+end
+
+post("/volunteers_add") do
   volunteer_name = params.fetch("volunteer_name")
   project_id = params.fetch("project_id").to_i
   @project = Project.find(project_id)
@@ -61,19 +62,26 @@ post("/volunteers") do
   erb(:success)
 end
 
-delete("/projects/:id") do
-  @project = Project.find(params.fetch("id").to_i)
-  @project.delete
-  erb(:index)
+#####All working above this
+
+get('/volunteers/:id') do
+  @volunteer = Volunteer.find(params.fetch("id").to_i)
+  erb(:volunteer)
+end
+#
+patch("/volunteers/:id") do
+  volunteer_id = params.fetch("id").to_i
+  volunteer = Volunteer.find(volunteer_id)
+  volunteer_name = params.fetch("volunteer_name")
+  volunteer.update({:volunteer_name => volunteer_name})
+  @volunteer = Volunteer.find(volunteer_id)
+  erb(:success)
 end
 
-
-# patch("/projects/:id") do
-#   project_name = params.fetch("project_name")
-#   @project = Project.find(params.fetch("id").to_i)
-#   @project.update(:project_name => project_name)
-#   erb(:project)
-# end
-
-
-# delet("")
+delete("/volunteers/:id") do
+  volunteer_id = params.fetch("id").to_i
+  volunteer = Volunteer.find(volunteer_id)
+  volunteer.delete
+  erb(:index)
+end
+############## this should be correct delete route

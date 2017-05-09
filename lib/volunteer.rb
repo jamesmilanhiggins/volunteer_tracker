@@ -5,7 +5,7 @@ class Volunteer
   define_method(:initialize) do |attributes|
     @volunteer_name = attributes.fetch(:volunteer_name)
     @project_id = attributes.fetch(:project_id)
-    @id = nil
+    @id = attributes[:id]
   end
 
   define_singleton_method(:all) do
@@ -37,7 +37,7 @@ class Volunteer
 
   define_singleton_method(:find) do |identification|
     Volunteer.all.each do |volunteer|
-      if volunteer.volunteer_name == identification
+      if volunteer.id == identification
         return volunteer
       end
     end
