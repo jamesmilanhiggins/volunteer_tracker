@@ -27,6 +27,19 @@ describe('viewing projects that have been created', {:type => :feature}) do
   end
 end
 
+describe('the project deletion path', {:type => :feature}) do
+  it('deletes a project') do
+    test_project = Project.new({:project_name => "test project", :id => nil})
+    test_project.save
+    id = test_project.id
+
+    visit "/projects/#{id}/edit"
+    click_button('Delete project')
+    expect(page).to have_content('Welcome')
+
+  end
+end
+
 describe('the volunteer deletion path', {:type => :feature}) do
   it ('deletes a volunteer') do
     test_project = Project.new({:project_name => "test project", :id => nil})
