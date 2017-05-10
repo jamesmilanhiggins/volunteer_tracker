@@ -1,14 +1,3 @@
-<h1>This page works</h1>
-<h1>Update your <%= @volunteer.volunteer_name %> </h1>
-<h1>The name of volunteer is: <%= @volunteer.volunteer_name %></h1>
-
-
- <a href="/volunteers/<%= @volunteer.id() %>/edit" class="btn btn-info">Edit Volunteer Details</a> 
-
-
-
-
-
 <h1>Update the <%=@volunteer.volunteer_name() %> name </h1>
 
 <form action="/volunteers/<%= @volunteer.id() %>" method="post">
@@ -25,4 +14,4 @@
   <button type="submit">Delete this volunteer</button>
 </form>
 
-<a href="/" class="btn">Home</a>
+<a href="/" class="btn btn-success">Home</a>
