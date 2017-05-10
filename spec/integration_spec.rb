@@ -10,6 +10,7 @@ describe('visiting homepage', {:type => :feature}) do
     expect(page).to have_content('Welcome to the Project Manager Application')
   end
 end
+
 describe('adding a new project', {:type => :feature}) do
   it('allows a user to create a new project') do
     visit('/')
@@ -19,6 +20,7 @@ describe('adding a new project', {:type => :feature}) do
     expect(page).to have_content('Success!')
   end
 end
+
 describe('viewing projects that have been created', {:type => :feature}) do
   it('allows a user to view the projects') do
     visit('/')
@@ -32,11 +34,9 @@ describe('the project deletion path', {:type => :feature}) do
     test_project = Project.new({:project_name => "test project", :id => nil})
     test_project.save
     id = test_project.id
-
     visit "/projects/#{id}/edit"
     click_button('Delete project')
     expect(page).to have_content('Welcome')
-
   end
 end
 
@@ -51,19 +51,5 @@ describe('the volunteer deletion path', {:type => :feature}) do
     click_link("james")
     click_button('Delete this volunteer')
     expect(page).to have_content('Welcome')
-
   end
 end
-
-
-
-# describe('viewing projects that have been created', {:type => :feature}) do
-#   it('allows a user to view the projects and click into an individual project') do
-#     visit('/')
-#     click_link('View All Projects')
-#     project = Project.new({:project_name => 'home', :id => 1})
-#     project.save
-#     visit("/project/#{project.id}")
-#     expect(page).to have_content('home')
-#   end
-# end

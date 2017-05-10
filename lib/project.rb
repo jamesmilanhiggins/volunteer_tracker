@@ -58,18 +58,4 @@ class Project
     DB.exec("DELETE FROM volunteers WHERE project_id =#{self.id};")
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end

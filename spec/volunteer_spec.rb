@@ -47,9 +47,6 @@ describe(".find") do
   end
  end
 
-
-#
-
 describe("#update") do
   it("updates the name of the volunteer")do
     test_volunteer = Volunteer.new({:volunteer_name => "james", :project_id => 1, :id => nil})
@@ -68,7 +65,5 @@ describe("#delete") do
     expect(Volunteer.all).to(eq([]))
     end
   end
-
-
 
 end

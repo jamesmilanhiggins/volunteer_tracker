@@ -29,12 +29,6 @@ class Volunteer
     self.volunteer_name.==(another_volunteer.volunteer_name).&(self.project_id.==(another_volunteer.project_id))
   end
 
-  # define_method(:update) do |attributes|
-  #   @volunteer_name = attributes.fetch(:volunteer_name)
-  #   DB.exec("UPDATE volunteers SET volunteer_name = '#{@name}' WHERE id = #{self.id};")
-  # end
-
-
   define_singleton_method(:find) do |identification|
     Volunteer.all.each do |volunteer|
       if volunteer.id == identification

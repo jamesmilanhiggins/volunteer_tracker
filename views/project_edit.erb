@@ -2,15 +2,12 @@
 
 <form action="/projects/<%= @project.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
-
   <label for="name">Rename your project:</label>
   <input id="name" name="project_name" type="text">
-
   <button type="submit">Update</button>
 </form>
 
 <form action="/projects/<%= @project.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
-
   <button type="submit">Delete project</button>
 </form>

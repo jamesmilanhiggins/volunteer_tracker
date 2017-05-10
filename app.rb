@@ -62,13 +62,12 @@ post("/volunteers_add") do
   erb(:success)
 end
 
-#####All working above this
 
 get('/volunteers/:id') do
   @volunteer = Volunteer.find(params.fetch("id").to_i)
   erb(:volunteer)
 end
-#
+
 patch("/volunteers/:id") do
   volunteer_id = params.fetch("id").to_i
   volunteer = Volunteer.find(volunteer_id)
@@ -84,4 +83,3 @@ delete("/volunteers/:id") do
   volunteer.delete
   erb(:index)
 end
-############## this should be correct delete route
